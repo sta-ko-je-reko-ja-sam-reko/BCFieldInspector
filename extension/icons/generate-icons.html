@@ -1,0 +1,33 @@
+<!--
+  Open this file in a browser to generate icon PNGs.
+  Right-click each canvas and "Save image as" to save the icons.
+-->
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Right-click each icon and save as PNG</h3>
+<p>icon16.png:</p><canvas id="c16" width="16" height="16"></canvas>
+<p>icon48.png:</p><canvas id="c48" width="48" height="48"></canvas>
+<p>icon128.png:</p><canvas id="c128" width="128" height="128"></canvas>
+<script>
+function drawIcon(id, size) {
+  const c = document.getElementById(id);
+  const ctx = c.getContext('2d');
+  // Green background
+  ctx.fillStyle = '#1b5e20';
+  ctx.beginPath();
+  ctx.roundRect(0, 0, size, size, size * 0.15);
+  ctx.fill();
+  // White "Fi" text
+  ctx.fillStyle = '#ffffff';
+  ctx.font = `bold ${size * 0.55}px Consolas, monospace`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('Fi', size / 2, size / 2 + size * 0.03);
+}
+drawIcon('c16', 16);
+drawIcon('c48', 48);
+drawIcon('c128', 128);
+</script>
+</body>
+</html>
